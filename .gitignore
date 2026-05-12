@@ -1,0 +1,16 @@
+# 機密・環境設定
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# OS・エディタ
+.DS_Store
+Thumbs.db
+.vscode/
+
+# バックアップファイル
+*.bak
+*~
+
