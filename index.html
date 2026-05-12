@@ -1,0 +1,1330 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<!--8/10移転-->
+	<head>
+		<meta charset="utf-8">
+		<title>仁淀鉄鋼株式会社</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/footer.css" rel="stylesheet">
+		<link href="css/bootstrap-override_for_banner.css" rel="stylesheet">
+		<style>
+/* 動画サムネイル用CSS */
+/* beforeが丸部分でafterで三角部分を作っている */
+/*
+参考URL：https://internship.taneppa.net/kitadani/archives/1078/
+*/
+
+.thumb a {
+	position: relative;
+	display: block;
+	text-decoration: none;
+}
+ 
+.thumb a:before {
+	position: absolute;
+	content: "";
+	display: block;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	border: 6px solid #E6C612;
+	border: 6px solid #0000DD;
+	border: 6px solid #FFFFFF;
+	width: 60px;
+	height: 60px;
+}
+ 
+.thumb a:after {
+	position: absolute;
+	content: "";
+	display: block;
+	top: 50%;
+	left: 50%;
+	transform: translate(-40%, -50%);
+	border-style: solid;
+	border-color: transparent transparent transparent #E6C612;
+	border-color: transparent transparent transparent #0000DD;
+	border-color: transparent transparent transparent #FFFFFF;
+	border-width: 15px 0 15px 25px;
+}
+
+/* マウスオーバー時は透明度を60%にする */
+.thumb a:hover {
+	opacity: 0.6;
+	transition-duration: 0.2s;
+}
+
+/*	全般	*/
+
+body{
+	font-size:100%;
+	font-weight:bold;
+}
+
+h3{
+	border-left: 6px solid #DDDDDD;
+	padding-left: 17px;
+}
+
+.table{
+	background-color:#e9e9e9;
+}
+
+table.table,
+.table th,
+.table td{
+	border-width:1px;
+	border-color: #BBBBBB;
+}
+
+.table th,
+.table-manufacture td{
+	text-align:center;
+	vertical-align: middle;
+}
+
+td.center{
+	width:200px;
+	text-align:center;
+	white-space: nowrap;
+}
+
+/*	生産設備の数値を右揃え	*/
+td.num{
+	padding-right: 50px;
+	text-align: right;
+	width: 80px;
+}
+/*	生産設備の稼働年を左揃え	*/
+td.year{
+	padding-left:35px;
+	width:70px;
+	text-align:left;
+}
+
+/*	環境方針用CSS*/
+
+	#gaiyouArea{
+		width:100%;text-align:center;
+	}
+	#gaiyouDetail{
+		width:750px;
+		font-size:18px;
+		text-align:center;
+		text-indent:1em;
+		margin:0 auto 15px;
+	}
+
+	#gaiyouInfo{
+		width:550px;
+		font-size:14px;
+		text-align:left;
+		text-indent:0.8em;
+		margin:40px auto 0px;
+	}
+
+
+	ul{
+		list-style-type: decimal;
+		line-height:2em;
+	}
+	li ul{
+		list-style-type: lower-alpha;
+		margin: 0 0 0 1.5em;
+		padding: 0;
+	}
+
+
+		</style>
+<!--	スクリプト読み込み	-->
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/unslider.min.js"></script>
+		<script type="text/javascript">
+			jQuery(function($){
+				$('.banner').unslider({
+				    speed: 500,               // スライド時のアニメーションのスピード
+				    delay: 6000,              // スライドのアニメーションの間隔
+					complete: function() {},  // スライド完了時のコールバック関数
+				    keys: true,               // キーボード操作の有無
+				    dots: true,               // ナビゲーションの有無
+				    fluid: false              // レスポンシブ対応の有無
+				});
+			});
+
+// スムーズにスクロールする
+			$(function(){
+				$('a[href^=#]').click(function(){
+					var speed = 800;
+					var href= $(this).attr("href");
+					var target = $(href == "#" || href == "" ? 'html' : href);
+					var position = target.offset().top;
+					$("html, body").animate({scrollTop:position}, speed, "swing");
+					return false;
+				});
+			});
+
+		</script>
+
+	</head>
+	<body>
+	<div id="wrap">
+	<div class="container">
+		<a id="top"></a>
+		<div class="navbar" style="margin-bottom: 0px;">
+			<div class="navbar-inner" style="padding-right: 0;">
+				<a class="brand" style="font-size:35px;width:350px;padding: 20px;">
+					<img src="img/logo.png" />&nbsp;<span style="vertical-align: middle;">仁淀鉄鋼株式会社</span>
+				</a>
+<!--	23/1/16変更	-->
+				<ul class="nav" style="float:right;font-weight:normal;font-size:90%;">
+					<li><a href="#news">ニュースリリース</a></li>
+					<li><a href="#info">会社概要</a></li>
+					<li><a href="#history">沿革</a></li>
+					<li><a href="#selling">営業品目</a></li>
+					<li><a href="#manufacture">生産設備</a></li><br/>
+					<li><a href="#Certification">認証取得</a></li>
+					<li><a href="#employmentEnvironment">雇用環境</a></li>
+					<li><a href="#ExclusionOfAntiSocialForces">反社会的勢力の排除</a></li>
+					<li><a href="#SDGs">SDGs</a></li>
+					<li><a href="#access">アクセス</a></li>
+				</ul>
+			</div>
+		</div>
+<!--	unslider用	-->
+		<div class="banner">
+		    <ul>
+		        <li style="background: url(img/honsya_new.jpg) no-repeat top center;">
+					<div style="text-align:left;margin:40px 0 0 40px;"><h1>大阪本社</h1></div>
+		        </li>
+		        <li style="background: url(img/nara_westYard.jpg) no-repeat top center;">
+					<div style="text-align:left;margin:42px 0 0 30px;"><h1>奈良工場</h1></div>
+				</li>
+		        <li style="background: url(img/tokyo.jpg) no-repeat top center;">
+					<div style="text-align:left;margin:42px 0 0 30px;">
+						<h1 style="color:#576f9a;">東京支社・東京工場</h1>
+					</div>
+		        </li>
+		        <li style="background: url(img/factory.jpg) no-repeat top center;">
+					<div style="text-align:left;margin:42px 0 0 30px;"><h1>工場設備</h1></div>
+		        </li>
+		    </ul>
+		</div>
+<!--	unslider用end	-->
+<!--	23/1/16追加	start	-->
+		<a id="news"></a>
+		<h3>ニュースリリース</h3>
+		<div class="row">
+			<div class="span1">
+			</div>
+			<div class="span10">
+	    	<table class="table table-bordered">
+	    		<thead>
+				<tr>
+					<th>年月</th>
+					<th>内容</th>
+				</tr>
+	    		</thead>
+	    		<tbody>
+				<tr>
+					<td>2026年4月</td>
+					<td><a href="#employmentEnvironment">『次世代育成支援対策推進法・女性活躍推進法に基づく一般事業主行動計画』を更新</a></td>
+				</tr>
+				<tr>
+					<td>2025年5月</td>
+					<td>社員数・売上高、沿革の更新</td>
+				</tr>
+				<tr>
+					<td>2024年1月</td>
+					<td>令和6年能登半島地震災害の義援金として100万円の寄附を実施</td>
+				</tr>
+				<tr>
+					<td>2023年10月</td>
+					<td><a href="#SDGsInvest">SDGs債へ投資</a></td>
+				</tr>
+				<tr>
+					<td>2023年7月</td>
+					<td><a href="#ExclusionOfAntiSocialForces">『反社会的勢力排除に向けた基本方針』を策定</a></td>
+				</tr>
+				<tr>
+					<td>2023年1月</td>
+					<td><a href="#SDGs">SDGs宣言</a></td>
+				</tr>
+				<tr>
+					<td>2022年3月</td>
+					<td><a href="#employmentEnvironment">『次世代育成支援対策推進法・女性活躍推進法に基づく一般事業主行動計画』を策定</a></td>
+				</tr>
+				<tr>
+					<td>2020年11月</td>
+					<td><a href="#resilience">レジリエンス認証を取得</a></td>
+				</tr>
+<!--				<tr>
+					<td>2012年9月</td>
+					<td><a href="#ISO14001">ＩＳＯ１４００１を取得</a></td>
+				</tr>
+				<tr>
+					<td>2003年9月</td>
+					<td><a href="#ISO9001">ＩＳＯ９００１を取得</a></td>
+				</tr>
+-->
+	    		</tbody>
+			</table>
+			</div>
+			<div class="span1">
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+<!--	23/1/16追加	End	-->
+
+		<a id="greeting"></a>
+		<h3>ごあいさつ</h3>
+		<div class="row">
+			<div class="span1">
+			</div>
+			<div class="span10">
+	    	<p>　人の暮らしと産業の限りない発展を願って・・・。<br>
+			　仁淀鉄鋼は”あらゆる需要家にとってかけがえのない加工業者たること”を創業以来の使命とし、時代とともに発展する企業を目指して、従業員一同努力してまいりました。<br>
+			　お陰様で、スリット専業の薄板コイルセンターとして大手企業ではマネのできない機動力と小回りの良さを活かし、求める企業に求める世界の国々に、高度な付加価値を添えて商品を送り出すことができ、大きく成長を遂げましたことは、偏に皆様方のご愛顧ご支援の賜物と深く感謝致しております。<br>
+			　時代は今、大きな転換期を迎え、産業構造や社会状況もまた、めまぐるしく激動し、企業自身もかってない変革を迫られています。このターニングポイントを私たちは、力強く乗り切り、２１世紀更なる飛躍を目指し、積極的な設備投資をはじめとする生産性の追求と、より細やかなこころ配りを持った営業活動によって、立ち止まることなく未来を見つめる企業として、さらに研鑚を続けてまいります。<br>
+			今後とも、いっそうのご指導ご鞭撻の上、倍旧のお引き立てを賜りますよう、お願い申し上げます。
+			</p>
+			</div>
+			<div class="span1">
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+		<a id="info"></a>
+		<h3>会社概要</h3>
+		<div class="row">
+			<div class="span1">
+			</div>
+			<div class="span10">
+			<p>　当社は、鉄鋼流通機構の一員としてコイルセンター業界に属し、薄板・ステンレス・アルミ等の<strong>スリット加工販売</strong>を主体としております。<br>
+			　当社の製品は需要家において、プレス加工・フォーミング加工・パイプ製造等に加工され、自動車・家電・建築・産業機械・自転車等の広範囲な用途に使用されております。<br>
+			　生産形態は、受注生産を基本としておりますが、製造・販売・管理のシステム化を図り、短納期体制を確立させております。<br>
+			　工場の操業は空調管理を行っております。製品の錆対策と、社員の作業環境改善を目的としております。<br>
+			</p>
+			</div>
+			<div class="span1">
+			</div>
+		</div>
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="span1">
+			</div>
+			<div class="span7">
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<td>商　号</td>
+							<td><b>仁淀鉄鋼株式会社<br>NIYODO TEKKO CO.,LTD.</b></td>
+						</tr>
+						<tr>
+							<td>代表者</td>
+							<td><span style="font-size:80%;">代表取締役社長</span>　　<b>吉田　英司</b></td>
+						</tr>
+						<tr>
+							<td>設　立</td>
+							<td><b>昭和３８年１１月</b></td>
+						</tr>
+						<tr>
+							<td>資本金</td>
+							<td><b>１億円</b></td>
+						</tr>
+						<tr>
+							<td>社員数</td>
+							<td><b>１２０名</b>　　（令和７年３月末現在）</td>
+						</tr>
+						<tr>
+							<td>売上高</td>
+							<td><b>１３９億円</b>　（令和７年３月期）</td>
+						</tr>
+						<tr>
+							<td>取引銀行</td>
+							<td>
+							<a target="_blank" href="http://www.mizuhobank.co.jp/">みずほ銀行</a>
+							・<a target="_blank" href="http://www.resona-gr.co.jp/">りそな銀行</a>
+							・<a target="_blank" href="http://www.kochi-bank.co.jp/">高知銀行</a>
+							・<a target="_blank" href="http://www.smbc.co.jp/">三井住友銀行</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="span1"></div>
+			<div class="span3">
+			<h4>鉄鋼メーカー</h4>
+				<table class="table table-striped table-bordered table-condensed">
+					<tbody>
+						<tr>
+							<td>
+								<a target="_blank" href="https://www.nipponsteel.com/">日本製鉄 ㈱</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a target="_blank" href="http://www.kobelco.co.jp/">㈱ 神戸製鋼所</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a target="_blank" href="http://tkworks.jp/">東洋鋼鈑 ㈱</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a target="_blank" href="https://www.csc.com.tw/index.html">中國鋼鐵股分有限公司</a>
+							</td>
+						</tr>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="span3">
+			<h4>加盟団体</h4>
+				<table class="table table-striped table-bordered table-condensed">
+					<tbody>
+						<tr>
+							<td><a target="_blank" href="http://www.osaka.cci.or.jp/">大阪商工会議所</a></td>
+						</tr>
+						<tr>
+							<td><a target="_blank" href="https://tekkoo.jp/zcc_news/">全国コイルセンター工業組合</a></td>
+						</tr>
+						<tr>
+							<td>関西コイルセンター工業会</td>
+						</tr>
+						<tr>
+							<td><a target="_blank" href="https://www.u-steelworld.net/">浦安鐵鋼団地協同組合</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span1"></div>
+			<div class="span4">
+			<h4>協力会社</h4>
+				<table class="table table-striped table-bordered table-condensed">
+					<tbody>
+						<tr>
+							<td><strong>二次加工</strong></td>
+							<td><a target="_blank" href="https://hannan-roll.co.jp/">㈱ 阪南特殊ロール</a></td>
+						</tr>
+						<tr>
+							<td><strong>輸送関係</strong></td>
+							<td><a target="_blank" href="https://e-iware.jp/">㈱いわれ</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+		<a id="history"></a>
+		<h3>沿革</h3>
+		<div class="row">
+			<div class="span12">
+				<table class="table table-striped table-bordered table-condensed">
+					<tbody>
+						<tr>
+							<td class="center">１９５８（昭和３３）年　３月</td>
+							<td>大阪市中央区に渡辺一生商店個人創業</td>
+						</tr>
+						<tr>
+							<td class="center">１９６３（昭和３８）年１１月</td>
+							<td>法人に改組、仁淀鉄鋼株式会社 設立</td>
+						</tr>
+						<tr>
+							<td class="center">１９６７（昭和４２）年　５月</td>
+							<td>大阪市平野区瓜破に工場竣工　※１９７９（昭和５４）年１１月売却</td>
+						</tr>
+<!-- 2015.7.31 追加（森本係長指示※パンフレットと同じ内容とするため）-->
+						<tr>
+							<td class="center">１９６９（昭和４４）年　３月</td>
+							<td>大阪市中央区南船場に本社移転</td>
+						</tr>
+						<tr>
+							<td class="center">１９７０（昭和４５）年　３月</td>
+							<td>東京都千代田区に東京事務所開設　※１９７２（昭和４７）年７月営業所に改組</td>
+						</tr>
+						<tr>
+							<td class="center">１９７０（昭和４５）年　４月</td>
+							<td>奈良県田原本町に奈良工場竣工</td>
+						</tr>
+						<tr>
+							<td class="center">１９７４（昭和４９）年１２月</td>
+							<td>奈良工場：第二工場増築　大型機導入</td>
+						</tr>
+						<tr>
+							<td class="center">１９７９（昭和５４）年　４月</td>
+							<td>みがき特殊帯鋼販売開始　（旧）住友金属工業株式会社のコイルセンター指定を受ける</td>
+						</tr>
+						<tr>
+							<td class="center">１９８５（昭和６０）年　５月</td>
+							<td>全社：ＯＡ導入　製造・販売・管理システム確立<br>奈良工場：大型機導入</td>
+						</tr>
+						<tr>
+							<td class="center">１９９２（平成　４）年　３月</td>
+							<td>奈良工場：隣接地に新工場竣工　大型ノンオイル専用スリッター設備稼働　全自動梱包ライン導入</td>
+						</tr>
+						<tr>
+							<td class="center">１９９４（平成　６）年　７月</td>
+							<td>奈良工場：オシレート機導入</td>
+						</tr>
+						<tr>
+							<td class="center">１９９６（平成　８）年　４月</td>
+							<td>大阪市西区に本社ビル取得移転</td>
+						</tr>
+						<tr>
+							<td class="center">２０００（平成１２）年　４月</td>
+							<td>千葉県船橋市に東京工場取得　東京営業所を移転　※２０１８（平成３０）年５月売却</td>
+						</tr>
+						<tr>
+							<td class="center">２００３（平成１５）年　９月</td>
+							<td>奈良工場でＩＳＯ９００１：２０００を取得（登録証番号：ＪＱＡ－ＱＭＡ１０４５５）</td>
+						</tr>
+						<tr>
+							<td class="center">２００４（平成１６）年　１月</td>
+							<td>（旧）長浜鋼業（本社・東京都）の経営権を取得　伊藤忠丸紅鉄鋼と共同経営</td>
+						</tr>
+						<tr>
+							<td class="center">２００８（平成２０）年　５月</td>
+							<td>東京営業所・工場共に長浜鋼業株式会社に移転</td>
+						</tr>
+						<tr>
+							<td class="center">２０１１（平成２３）年　３月</td>
+							<td>奈良工場：大型１号機更新　自動刃組装置導入</td>
+						</tr>
+						<tr>
+							<td class="center">２０１２（平成２４）年　３月</td>
+							<td>奈良工場：オシレート機増設（現５基体制）　立体自動倉庫稼動</td>
+						</tr>
+						<tr>
+							<td class="center">２０１２（平成２４）年　９月</td>
+							<td>本社・東京営業所・奈良工場においてＩＳＯ１４００１：２００４を取得（登録証番号：ＪＱＡ－ＥＭ６８９０）</td>
+						</tr>
+						<tr>
+							<td class="center">２０１３（平成２５）年１０月</td>
+							<td>（旧）長浜鋼業を吸収合併　東京支社に改組</td>
+						</tr>
+						<tr>
+							<td class="center">２０１４（平成２６）年　３月</td>
+							<td>奈良工場・東京工場にて太陽光発電事業(売電）開始</td>
+						</tr>
+						<tr>
+							<td class="center">２０１４（平成２６）年　３月</td>
+							<td>東京工場において ＩＳＯ９００１：２０００を取得（登録証番号：ＪＱＡ－ＱＭＡ１０４５５）</td>
+						</tr>
+						<tr>
+							<td class="center">２０１５（平成２７）年　１月</td>
+							<td>茨城県筑西市にて太陽光発電事業（売電）開始</td>
+						</tr>
+						<tr>
+							<td class="center">２０１５（平成２７）年　３月</td>
+							<td>東京工場：立体自動倉庫稼働</td>
+						</tr>
+						<tr>
+							<td class="center">２０１６（平成２８）年　３月</td>
+							<td>全社：基幹システム全面更新</td>
+						</tr>
+						<tr>
+							<td class="center">２０１７（平成２９）年　３月</td>
+							<td>東京工場：拡張（南ヤード増築）</td>
+						</tr>
+						<tr>
+							<td class="center">２０１８（平成３０）年　３月</td>
+							<td>奈良工場：小型６号機更新（板厚６㍉まで加工可能な中型機）<br>東京工場：自動梱包機増設</td>
+						</tr>
+						<tr>
+							<td class="center">２０２０（令和０２）年　３月</td>
+							<td>東京工場：小型６号機更新</td>
+						</tr>
+						<tr>
+							<td class="center">２０２０（令和０２）年　８月</td>
+							<td>東京工場：小型７号機更新</td>
+						</tr>
+						<tr>
+							<td class="center">２０２０（令和０２）年１１月</td>
+							<td>全社：レジリエンス認証取得（認証・登録番号：E000075）</td>
+						</tr>
+						<tr>
+							<td class="center">２０２１（令和０３）年　１月</td>
+							<td>東京工場：大型１号機更新　自動刃組装置導入</td>
+						</tr>
+						<tr>
+							<td class="center">２０２１（令和０３）年　５月</td>
+							<td>東京工場：大型２号機更新</td>
+						</tr>
+						<tr>
+							<td class="center">２０２２（令和０４）年　３月</td>
+							<td>「次世代育成支援対策推進法・女性活躍推進法に基づく一般事業主行動計画」を策定</td>
+						</tr>
+						<tr>
+							<td class="center">２０２２（令和０４）年　５月</td>
+							<td>東京工場：立体自動倉庫更新</td>
+						</tr>
+						<tr>
+							<td class="center">２０２２（令和０４）年　７月</td>
+							<td>仁淀川町（高知県吾川郡）への寄附</td>
+						</tr>
+						<tr>
+							<td class="center">２０２３（令和０５）年　１月</td>
+							<td>SDGs宣言</td>
+						</tr>
+						<tr>
+							<td class="center">２０２３（令和０５）年１０月</td>
+							<td>奈良工場：大型２号機更新　自動刃組装置　自動板厚・板幅測定装置導入</td>
+						</tr>
+						<tr>
+							<td class="center">２０２４（令和０６）年１２月</td>
+							<td>奈良マラソンへの協賛</td>
+						</tr>
+						<tr>
+							<td class="center">２０２５（令和０７）年　３月</td>
+							<td>奈良工場：大型２号機自動刃組装置内スリッターナイフ等自動清掃装置<br>
+							奈良工場：縦型梱包機更新および自動搬送装置設置
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+		<a id="selling"></a>
+		<h3>営業品目</h3>
+		<div class="row">
+			<div class="span1">
+			</div>
+			<div class="span8">
+				<table class="table table-striped table-bordered table-condensed">
+				<tbody>
+					<tr>
+						<td><strong>冷延鋼板</strong></td>
+						<td>SPCC-SD（ダル）<br>
+						SPCC-SB（ブライト）<br>
+						SPCC-1B･2B･4B･8B（硬質材）</td>
+					</tr>
+					<tr>
+						<td><strong>熱延鋼板</strong></td>
+						<td>SPHC-P（酸洗材）</td>
+					</tr>
+					<tr>
+						<td><strong>表面処理鋼板</strong></td>
+						<td>電気亜鉛メッキ鋼板、黒色電気めっき鋼板<br>
+						溶融亜鉛メッキ鋼板、ＺＡＭ、スーパーダイマ<br>
+						カラー鋼板</td>
+					</tr>
+					<tr>
+						<td><strong>自動車用高張力鋼板</strong></td>
+						<td>SPFH（440・490・540・590）<br>
+						SPFC（440・490・540・590）</td>
+					</tr>
+					<tr>
+						<td><strong>みがき特殊帯鋼</strong></td>
+						<td>炭素鋼（S30CM～S70CM)<br>
+						炭素工具鋼(SK4M～SK7M)(SCM435M)</td>
+					</tr>
+					<tr>
+						<td><strong>ステンレス鋼板</strong></td>
+						<td>SUS(301･304･430等各種）</td>
+					</tr>
+					<tr>
+						<td><strong>アルミ鋼板</strong></td>
+						<td>A1050･A1100･A5052等各種</td>
+					</tr>
+					<tr>
+						<td><strong>非鉄金属</strong></td>
+						<td>真鍮、燐青銅等</td>
+					</tr>
+					<tr>
+						<td><strong>パイプ</strong></td>
+						<td>鉄、アルミ、ステンレス、塩ビコーティング</td>
+					</tr>
+					<tr>
+						<td><strong>その他</strong></td>
+						<td>樹脂系素材製品、ロール成形商品</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+		<a id="manufacture"></a>
+		<h3>生産設備</h3>
+		<div class="row">
+			<div class="span1">
+			</div>
+			<div class="span11">
+				<h4><i class="icon-wrench"></i> 奈良工場</h4>
+				<table class="table table-striped table-bordered table-condensed table-manufacture">
+					<tbody>
+						<tr>
+							<th colspan="2" rowspan="2">機械名</th>
+							<th colspan="5">機械仕様</th>
+						</tr>
+						<tr>
+							<th>板厚(mm)</th>
+							<th>母材巾(mm)</th>
+							<th>母材単重(kg)</th>
+							<th>月産能力(㌧)</th>
+							<th>稼働年</th>
+						</tr>
+						<tr>
+							<td rowspan="3">大型</td>
+							<td>１号機</td>
+							<td>1.5&nbsp;&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;8.0</td>
+							<td class="num">1,250</td>
+							<td class="num">19,000</td>
+							<td class="num">3,000</td>
+							<td class="year">2011</td>
+						</tr>
+<!--
+						<tr>
+							<td>２号機</td>
+							<td>0.15&nbsp;&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;2.6</td>
+							<td class="num">1,300</td>
+							<td class="num">19,000</td>
+							<td class="num">3,000</td>
+							<td class="year">2023</td>
+						</tr>
+-->
+						<tr>
+							<td>２号機</td>
+							<td>0.15&nbsp;&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;2.6</td>
+							<td class="num">1,300</td>
+							<td class="num">19,000</td>
+							<td class="num">3,000</td>
+							<td class="year">2023</td>
+						</tr>
+						<tr>
+							<td>３号機</td>
+							<td>0.2&nbsp;&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;3.2</td>
+							<td class="num">1,300</td>
+							<td class="num">19,000</td>
+							<td class="num">3,000</td>
+							<td class="year">1992</td>
+						</tr>
+						<tr>
+							<td rowspan="2">小型</td>
+							<td>６号機</td>
+							<td>1.2&nbsp;&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;6.0</td>
+							<td class="num">400</td>
+							<td class="num">4,000</td>
+							<td class="num">500</td>
+							<td class="year">2018</td>
+						</tr>
+						<tr>
+							<td>７号機</td>
+							<td>0.2&nbsp;&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;3.2</td>
+							<td class="num">400</td>
+							<td class="num">2,500</td>
+							<td class="num">300</td>
+							<td class="year">1992</td>
+						</tr>
+						<tr>
+							<td colspan="2">ｵｼﾚｰﾄ機5基</td>
+							<td>0.5&nbsp;&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;3.0</td>
+							<td class="num">60</td>
+							<td>－</td>
+							<td class="num">1,000</td>
+							<td class="year">1994～</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span1">
+			</div>
+			<div class="span11">
+<h4><i class="icon-camera"></i> 奈良工場 写真・動画</h4>
+<table>
+	<tbody>
+		<tr>
+			<th>大型1号機</th>
+			<th>大型2号機</th>
+			<th>大型3号機</th>
+		</tr>
+		<tr>
+			<td>
+				<div class="thumb">
+					<a href="video/video_slitter.html" target="_blank">
+						<img class="img-polaroid" src="img/map_slitter1.jpg" alt="東ヤード１号機">
+					</a>
+				</div>
+			</td>
+			<td><img class="img-polaroid" src="img/map_slitter2.jpg" alt="東ヤード２号機"></td>
+			<td><img class="img-polaroid" src="img/map_slitter3.jpg" alt="西ヤード３号機"></td>
+		</tr>
+		<tr>
+			<th>自動梱包ライン</th>
+			<th>大型1号機　自動刃組装置</th>
+			<th>オシレート機</th>
+		</tr>
+		<tr>
+			<td><img class="img-polaroid" src="img/map_jidouKonpou.jpg" alt="自動梱包ライン"></td>
+			<td>
+				<div class="thumb">
+					<a href="video/video_hagumi.html" target="_blank">
+						<img class="img-polaroid" src="img/map_hagumi.jpg" alt="1号機　自動刃組装置">
+					</a>
+				</div>
+			</td>
+			<td><img class="img-polaroid" src="img/map_oshireito.jpg" alt="オシレート機"></td>
+		</tr>
+		<tr>
+			<th colspan="3">徹底した品質管理を行っています。</th>
+		</tr>
+		<tr>
+			<td><img class="img-polaroid" src="img/map_micrometer.jpg" alt="マイクロメーターで板厚検査"></td>
+			<td><img class="img-polaroid" src="img/map_check.jpg" alt="スリット裏面を検査"></td>
+			<td><img class="img-polaroid" src="img/map_check2.jpg" alt="スリッタースタントで検査"></td>
+		</tr>
+		<tr>
+			<th>大型1号機　アンコイラー</th>
+			<th>大型1号機　制御盤</th>
+			<th>自動倉庫</th>
+		</tr>
+		<tr>
+			<td><img class="img-polaroid" src="img/map_uncoiler.jpg" alt="1号機　アンコイラー"></td>
+			<td><img class="img-polaroid" src="img/map_controller.jpg" alt="1号機　制御盤"></td>
+			<td><img class="img-polaroid" src="img/map_rittaiJidouSouko.jpg" alt="立体自動倉庫"></td>
+		</tr>
+	</tbody>
+</table>
+
+			</div>
+		</div>
+		<div class="row">&nbsp;</div>
+		<div class="row">&nbsp;</div>
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="span1">
+			</div>
+			<div class="span11">
+				<h4><i class="icon-wrench"></i> 東京工場</h4>
+				<table class="table table-striped table-bordered table-condensed table-manufacture">
+					<tbody>
+						<tr>
+							<th colspan="2" rowspan="2">機械名</th>
+							<th colspan="5">機械仕様</th>
+						</tr>
+						<tr>
+							<th>板厚(mm)</th>
+							<th>母材巾(mm)</th>
+							<th>母材単重(kg)</th>
+							<th>月産能力(㌧)</th>
+							<th>稼働年</th>
+						</tr>
+<!--	2020年3月～2021年5月にかけて東京工場の機械全面刷新 -->
+						<tr>
+							<td rowspan="2">大型</td>
+							<td>１号機</td>
+							<td>0.40&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;4.5</td>
+							<td class="num">1,250</td>
+							<td class="num">15,000</td>
+							<td class="num">1,300</td>
+							<td class="year">2021</td>
+						</tr>
+						<tr>
+							<td>２号機</td>
+							<td>0.15&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;1.6</td>
+							<td class="num">1,250</td>
+							<td class="num">15,000</td>
+							<td class="num">800</td>
+							<td class="year">2021</td>
+						</tr>
+						<tr>
+							<td rowspan="2">小型</td>
+							<td>６号機</td>
+							<td>0.15&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;1.6</td>
+							<td class="num">300</td>
+							<td class="num">2,500</td>
+							<td class="num">130</td>
+							<td class="year">2020</td>
+						</tr>
+						<tr>
+							<td>７号機</td>
+							<td>0.40&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;4.5</td>
+							<td class="num">400</td>
+							<td class="num">3,500</td>
+							<td class="num">150</td>
+							<td class="year">2020</td>
+						</tr>
+						<tr>
+							<td rowspan="2">オシレート</td>
+							<td>Ａ号機</td>
+							<td>0.60&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;1.2</td>
+							<td class="num">20</td>
+							<td class="num">1,500</td>
+							<td class="num">30</td>
+							<td class="year">2017</td>
+						</tr>
+						<tr>
+							<td>Ｂ号機</td>
+							<td>0.60&nbsp;&nbsp;&nbsp;～&nbsp;&nbsp;&nbsp;1.2</td>
+							<td class="num">20</td>
+							<td class="num">1,500</td>
+							<td class="num">30</td>
+							<td class="year">2018</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+			<div class="row">
+				<div class="span1"></div>
+				<div class="span11">
+<h4><i class="icon-camera"></i> 東京工場 写真・動画</h4>
+<table>
+	<tbody>
+		<tr>
+			<th>大型1号機　自動刃組装置</th>
+			<th>大型1号機</th>
+			<th>大型2号機</th>
+		</tr>
+		<tr>
+			<td>
+				<div class="thumb">
+					<a href="video/video_tokyo_hagumi.html" target="_blank">
+						<img class="img-polaroid" src="img/map_tokyo_hagumi.jpg" alt="1号機　自動刃組装置"></td>
+					</a>
+				</div>
+			</td>
+			<td><img class="img-polaroid" src="img/map_tokyo_slitter1.jpg" alt="大型1号機"></td>
+			<td><img class="img-polaroid" src="img/map_tokyo_slitter2.jpg" alt="大型2号機"></td>
+		</tr>
+		<tr>
+			<th>小型6号機</th>
+			<th>小型7号機</th>
+			<th>オシレート機</th>
+		</tr>
+		<tr>
+			<td><img class="img-polaroid" src="img/map_tokyo_slitter6.jpg" alt="小型6号機"></td>
+			<td><img class="img-polaroid" src="img/map_tokyo_slitter7.jpg" alt="小型7号機"></td>
+			<td><img class="img-polaroid" src="img/map_tokyo_oshireito.jpg" alt="オシレート"></td>
+		</tr>
+		<tr>
+			<th>セキュリティカメラ</th>
+			<th>立体自動倉庫</th>
+			<th>南ヤード</th>
+		</tr>
+		<tr>
+			<td><img class="img-polaroid" src="img/map_tokyo_camera.jpg" alt="セキュリティカメラ"></td>
+			<td><img class="img-polaroid" src="img/map_tokyo_rittaiJidouSouko.jpg" alt="立体自動倉庫"></td>
+			<td><img class="img-polaroid" src="img/map_tokyo_south-yard2.jpg" alt="南ヤード"></td>
+		</tr>
+	</tbody>
+</table>
+				</div>
+			</div>
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+		<a id="Certification"></a>
+		<a id="ISO14001"></a>
+		<h3>ＩＳＯ１４００１</h3>
+		<div class="row">
+			<div class="span12">
+				<table style="border-collapse: collapse;">
+					<tr>
+						<th colspan="2">
+							<h3 style="border:0;text-decoration:underline;">ＩＳＯ１４００１　環境方針</h3>
+						</th>
+					</tr>
+					<tr>
+						<td colspan="2" id="honbunArea">
+							<div id="gaiyouArea">
+								<p id="gaiyouDetail">
+								仁淀鉄鋼株式会社は、生産効率の追求ときめ細かなサービス活動によって、<br>
+								お客様に満足と信頼を得る企業、そして社会の進歩と発展に貢献する企業を目指します。
+								</p>
+							</div>
+							<ul style="margin-left:80px;">
+								<li>
+								当社はスリット専業の薄板コイルセンターとして、機動力、小回りの良さを活かし、カスタマーの生産ラインに対応しうる供給体制を整えます
+								</li>
+								<li>
+								当社は、継続的な環境改善及び汚染の予防に努めます
+								</li>
+								<li>
+								当社の活動、製品、サービスに関わる環境法規、規制、協定などを順守します
+								</li>
+								<li>
+									当社の活動、製品、サービスに関わる環境影響のうち、以下の項目に取り組みます
+									<ul>
+										<li>
+										環境管理活動
+										</li>
+										<li>
+										生産性をアップ（不良率を低減）し、産業廃棄物の減量化とリサイクルを推進する
+										</li>
+										<li>
+										一般廃棄物を分別強化し、リサイクルを推進する
+										</li>
+									</ul>
+								</li>
+								<li>
+								この環境方針は、当社で働く又は、当社のために働くすべての人々に周知するために、各部署に掲示し、一般にも公開します
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+		<a id="ISO9001"></a>
+		<h3>ＩＳＯ９００１</h3>
+		<div class="row">
+			<div class="span12">
+				<table style="border-collapse: collapse;width:100%;margin-bottom:50px;">
+					<tr>
+						<th colspan="2">
+							<h3 style="border:0;text-decoration:underline;">ＩＳＯ９００１　品質方針</h3>
+						</th>
+					</tr>
+					<tr>
+						<td colspan="2" id="honbunArea">
+							<div id="gaiyouArea">
+								<p id="gaiyouDetail">
+									当社の業務と製品の『質』を向上させ、<br />
+									あらゆる需要家にとってかけがえのない加工業者たることを使命とし、<br />
+									安定成長を達成し、社会に貢献する。
+								</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<table border=0 align="center">
+				<tr>
+					<td align="center" style="font-size:12px;padding:8px;">
+						<IMG src="img/ISO9001.jpg"><br />
+						<strong>ＪＱＡ－ＱＭＡ１０４５５</strong><br />奈良工場&nbsp;・&nbsp;東京工場<br />&nbsp;
+					</td>
+					<td align="center" style="font-size:12px;padding:8px;">
+						<IMG src="img/ISO14001.jpg"><br />
+						<strong>ＪＱＡ－ＥＭ６８９０</strong><br />&nbsp;<br />&nbsp;
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+		<a id="resilience"></a>
+		<h3>レジリエンス認証</h3>
+		<div class="row">
+			<div class="span12">
+				<table style="border-collapse: collapse;width:100%;margin-bottom:20px;">
+					<tr>
+						<th colspan="2">
+							<h3 style="border:0;text-decoration:underline;">レジリエンス認証の取得</h3>
+						</th>
+					</tr>
+					<tr>
+						<td colspan="2" id="honbunArea">
+							<div id="gaiyouArea">
+								<p id="gaiyouDetail">
+									当社は、内閣官房国土強靭化推進室が進める国土強靭化団体認証（レジリエンス認証）制度において、2020年11月30日に国土強靭化貢献団体として一般社団法人レジリエンスジャパン推進協議会から認証を取得いたしました｡ 
+								</p>
+								<p id="gaiyouDetail">
+									大規模災害発生によるお客様への事業影響を最小限に抑えるべく事業継続計画（BCP）を制定し定期的な災害訓練等に取り組んでおります。
+								</p>
+<!--
+-->
+								<p id="gaiyouInfo">
+										レジリエンス認証とは、一般社団法人レジリエンスジャパン推進協議会が、<br />「国土強靭化貢献団体の認証に関するガイドライン」に基づき、事業継続に積極的に<br />取り組んでいる事業者に対して審査し「国土強靭化貢献団体」として認証する制度。
+								</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<table border=0 align="center">
+				<tr>
+					<td align="center">
+						<IMG src="img/resilience.jpg">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+		<a id="employmentEnvironment"></a>
+		<h3>次世代育成支援対策推進法・女性活躍推進法に基づく一般事業主行動計画</h3>
+		<div class="row">
+			<div class="span12">
+				<table style="border-collapse: collapse;width:100%;margin-bottom:20px;">
+					<tr>
+						<td colspan="2" id="honbunArea">
+							<div id="gaiyouArea">
+								<p id="gaiyouDetail">
+									従業員がその能力を発揮し、家族との生活・時間をしっかり確保することができる<br>雇用環境の整備の為、次のように行動計画を策定する。<br>（2026年4月20日更新、2022年3月7日策定）
+								</p>
+							</div>
+							<div style="margin-left:55px;">
+<h4>【次世代育成支援対策推進法・女性活躍推進法】</h4>
+<div  style="text-decoration:underline;">目標①：年次有給取得率を上げるための措置を実施する。</div><br>
+2024年度実績：62.4％<br>
+計画期間 2026年4月1日～2028年3月31日までの2年間<br>
+＜対策＞<br>
+・四半期毎に年次有給休暇の取得状況を把握する。<br>
+・各所属長へ有休取得状況の部署別取得率の通知を実施し、年次有給休暇5日以上取得の他、<br>
+　取得しやすい職場環境を整備する。<br>
+<br>
+<div  style="text-decoration:underline;">目標②：「ノー残業」を方針とするが、業務上必要な残業は月平均2時間以内とする。</div><br>
+2024年度実績：0.3時間/1人当たり<br>
+計画期間 2026年4月1日～2028年3月31日までの2年間<br>
+＜対策＞<br>
+・月末時点での時間外労働実績を事業所ごとに周知し、残業削減への意識高揚を図る。<br>
+・残業の事前承認制を継続することで、要因及び課題を抽出し、残業削減に向けた業務改善を検討し、実施していく。<br>
+<br>
+<div  style="text-decoration:underline;">目標③：男性社員の平均育児休業取得率を30％以上とする。</div><br>
+2024年度実績：25％<br>
+計画期間 2026年4月1日～2028年3月31日までの2年間<br>
+＜対策＞<br>
+・男性社員の育児休業等の取得状況について実態把握する。<br>
+・育児休業（特に「産後ﾊﾟﾊﾟ育休」）の制度内容、給付金等について周知する。<br>
+<br>
+<h4>【女性活躍推進法】</h4>
+<div  style="text-decoration:underline;">目標①：女性社員の平均勤続年数15年以上を目指す。</div><br>
+2025年3月時点：12.1年（営業、事務10.4年、製造12.6年）<br>
+計画期間 2026年4月1日～2028年3月31日までの2年間<br>
+＜対策＞<br>
+・職場環境への要望、改善点等をヒアリングするなどして見えてくる課題を、必要度合いに応じて随時改善していく。(実績：工場内女子トイレ、浴室設置等)<br>
+・女性係長職などの積極的登用。全社員のキャリア形成に向けて、資格取得の支援、外部セミナー研修や社内外勉強会等を実施する。<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+<!--	23/7/26追加	Start	-->
+		<a id="ExclusionOfAntiSocialForces"></a>
+		<h3>反社会的勢力排除に向けた基本方針</h3>
+		<div class="row">
+			<div class="span12">
+				<table style="border-collapse: collapse;width:100%;margin-bottom:20px;">
+					<tr>
+						<td colspan="2" id="honbunArea">
+							<div id="gaiyouArea">
+								<p id="gaiyouDetail">
+									当社の「反社会的勢力排除に向けた基本方針」を以下に示します。
+								</p>
+							</div>
+							<div style="margin-left:55px;">
+								<ol>
+								  <li>組織全体での対応：役職員の安全を確保しつつ、反社会的勢力による不当要求に毅然とした姿勢で対応します。経営陣を含む全ての職員が責任を持ちます。</li>
+								  <li>外部専門機関との連携：不当要求に備え、外部専門機関と緊密な連携を築きます。暴力追放運動推進センターや警視庁との協力を強化します。</li>
+								  <li>反社会的勢力との遮断：全ての関係を断ち、反社会的勢力との取引を一切行いません。取引相手の事前調査を徹底します。</li>
+								  <li>法的対応：反社会的勢力からの不当要求には民事と刑事の両面から厳正に対処します。</li>
+								  <li>裏取引と資金提供の禁止：反社会的勢力との間での裏取引や資金提供は絶対に行いません。</li>
+								  <li>教育啓蒙と体制強化：役職員への定期的な教育啓蒙を実施し、反社会的勢力排除に向けた社内体制を強化しています。</li>
+								</ol>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+<!--	23/7/26追加	End	-->
+
+
+<!--	23/1/16追加	start	-->
+		<a id="SDGs"></a>
+		<h3>SDGs宣言</h3>
+		<div class="row">
+			<div class="span12">
+			<a href="sdgs.pdf" target="_blank" rel="noopener noreferrer">
+				<img src="img/sdgs.jpg" alt="仁淀鉄鋼のSDGs宣言" title="仁淀鉄鋼のSDGs宣言">
+			</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+<!--	23/1/16追加	End	-->
+<!--	23/10/23追加	start	-->
+		<a id="SDGsInvest"></a>
+		<h3>SDGs債への投資</h3>
+		<div class="row">
+			<div class="span12">
+				<table style="border-collapse: collapse;width:100%;margin-bottom:20px;">
+					<tr>
+						<th colspan="2">
+							<h3 style="border:0;text-decoration:underline;">SDGs債への投資</h3>
+						</th>
+					</tr>
+					<tr>
+						<td colspan="2" id="honbunArea">
+							<div id="gaiyouArea">
+								<p id="gaiyouDetail">
+									当社は、SDGsの達成に向けた高速道路事業の社会的・環境的課題解決に資するプロジェクトの資金調達のために発行されるサステナビリティボンド（SDGs債）に投資しました。
+								</p>
+								<p id="gaiyouDetail">
+									この投資は、高速道路事業における交通安全確保や災害対策などの社会貢献活動、排水性舗装や道路照明のLED化などの環境貢献活動に活用されます。また、SDGsのいくつかの目標にも貢献します。
+								</p>
+								<p id="gaiyouDetail">
+									詳細は、
+									<a href="SustainabilityBond.pdf" target="_blank" rel="noopener noreferrer">
+										「阪神高速道路株式会社が発行する「サステナビリティボンド」への投資について」
+									</a>
+									をご覧ください。
+								</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+<!--	23/10/23追加	End	-->
+
+		<a id="access"></a>
+		<h3>アクセス</h3>
+
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="span1">&nbsp;</div>
+			<div class="span3">
+				    <i class="icon-home"></i>&nbsp;&nbsp;<strong>大阪本社</strong><br>
+		    </div>
+			<div class="span5">
+			    <address>
+					〒550-0003 大阪市西区京町堀 ２－５－１２<br>
+					TEL:06-6444-7001<br>
+					FAX:06-6444-7103
+				</address>
+				<address>
+					代表:<a href="mailto:infok@niyodo.co.jp">infok@niyodo.co.jp</a>
+				</address>
+			</div>
+			<div class="span2">
+				 <a class="btn btn-primary" target="map" href="map.html#honsya">
+					MAP
+				</a>
+			</div>
+		</div>
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="span1">&nbsp;</div>
+			<div class="span3">
+					<i class="icon-wrench"></i>&nbsp;&nbsp;<strong>奈良工場</strong><br>
+			</div>
+			<div class="span5">
+			    <address>
+					〒636-0246 奈良県磯城郡田原本町千代１０６５－８<br>
+					TEL:0744-32-4877<br>
+					FAX:0744-33-0434
+				</address>
+			</div>
+			<div class="span2">
+				 <a class="btn btn-primary" target="map" href="map.html#nara">
+					MAP
+				</a>
+			</div>
+		</div>
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="span1">&nbsp;</div>
+			<div class="span3">
+				<i class="icon-home"></i>&nbsp;<i class="icon-wrench"></i>&nbsp;&nbsp;<strong>東京支社・東京工場</strong><br>
+			</div>
+			<div class="span5">
+			    <address>
+					〒279-0025 千葉県浦安市鉄鋼通り１－４－１<br>
+					TEL:047-304-3008<br>
+					FAX:047-304-3009
+				</address>
+			</div>
+			<div class="span2">
+				 <a class="btn btn-primary" target="map" href="map.html#tokyo">
+					MAP
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset9 span3">
+				<a href="#top" class="btn"><i class="icon-arrow-up"></i> ページのトップへ戻る</a>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		</script>
+	    </div>
+		<div id="push"></div>
+		<div id="footer">
+			<div class="container navbar-inner" style="padding-right:0;padding-left:0;">
+				<p class="text-center">© NIYODO TEKKO CO.,LTD.</p>
+			</div>
+		</div>
+	</div><!-- /wrap -->
+	</body>
+</html>
