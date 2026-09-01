@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>公式サイト 更新手順書 | 仁淀鉄鋼株式会社</title>
+<style>
+	:root{
+		--ink:#1b2430;
+		--muted:#5d6b7a;
+		--line:#d8dee6;
+		--bg:#f4f6f8;
+		--accent:#c8641e;
+		--accent-soft:#fdf3ec;
+		--warn:#b23c17;
+		--warn-bg:#fdf0ec;
+		--ok:#1f6b4a;
+		--ok-bg:#eef7f2;
+	}
+	*{box-sizing:border-box;}
+	body{
+		margin:0;
+		padding:40px 20px 80px;
+		background:var(--bg);
+		color:var(--ink);
+		font-family:"Yu Gothic UI","Yu Gothic","Meiryo","Hiragino Kaku Gothic ProN",sans-serif;
+		font-size:15px;
+		line-height:1.9;
+	}
+	.sheet{
+		max-width:880px;
+		margin:0 auto;
+		background:#fff;
+		border:1px solid var(--line);
+		border-radius:4px;
+		padding:48px 56px 56px;
+	}
+	header{
+		border-bottom:3px solid var(--ink);
+		padding-bottom:18px;
+		margin-bottom:32px;
+	}
+	.eyebrow{
+		font-size:12px;
+		letter-spacing:.18em;
+		color:var(--muted);
+		margin:0 0 8px;
+	}
+	h1{
+		font-size:26px;
+		margin:0 0 10px;
+		line-height:1.45;
+	}
+	.lead{
+		margin:0;
+		color:var(--muted);
+		font-size:14px;
+	}
+	h2{
+		font-size:18px;
+		margin:44px 0 16px;
+		padding-left:12px;
+		border-left:5px solid var(--accent);
+		line-height:1.5;
+	}
+	h3{
+		font-size:15px;
+		margin:28px 0 10px;
+	}
+	p{margin:0 0 14px;}
+	table{
+		width:100%;
+		border-collapse:collapse;
+		margin:0 0 18px;
+		font-size:14px;
+	}
+	th,td{
+		border:1px solid var(--line);
+		padding:9px 12px;
+		text-align:left;
+		vertical-align:top;
+	}
+	th{
+		background:#eef1f5;
+		width:150px;
+		font-weight:600;
+	}
+	table.cols th{width:auto;}
+	ol.steps{
+		list-style:none;
+		counter-reset:step;
+		margin:0;
+		padding:0;
+	}
+	ol.steps > li{
+		counter-increment:step;
+		position:relative;
+		padding:0 0 22px 52px;
+		margin:0;
+		border-left:2px solid var(--line);
+	}
+	ol.steps > li:last-child{border-left-color:transparent;padding-bottom:0;}
+	ol.steps > li::before{
+		content:counter(step);
+		position:absolute;
+		left:-16px;
+		top:0;
+		width:32px;
+		height:32px;
+		border-radius:50%;
+		background:var(--accent);
+		color:#fff;
+		font-size:14px;
+		font-weight:700;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+	ol.steps .st{
+		font-weight:700;
+		display:block;
+		margin:4px 0 6px;
+		font-size:15px;
+	}
+	ol.steps p{margin:0 0 8px;font-size:14px;}
+	kbd{
+		display:inline-block;
+		background:#f2f4f7;
+		border:1px solid #c3ccd6;
+		border-bottom-width:2px;
+		border-radius:3px;
+		padding:1px 7px;
+		font-family:Consolas,"Courier New",monospace;
+		font-size:12px;
+		line-height:1.7;
+		white-space:nowrap;
+	}
+	code{
+		background:#f2f4f7;
+		border-radius:3px;
+		padding:1px 6px;
+		font-family:Consolas,"Courier New",monospace;
+		font-size:13px;
+	}
+	pre{
+		background:#1f2733;
+		color:#e6ebf1;
+		padding:14px 18px;
+		border-radius:4px;
+		overflow-x:auto;
+		font-family:Consolas,"Courier New",monospace;
+		font-size:13px;
+		line-height:1.75;
+		margin:0 0 16px;
+	}
+	pre code{background:none;color:inherit;padding:0;font-size:inherit;}
+	.box{
+		border-radius:4px;
+		padding:16px 20px;
+		margin:0 0 18px;
+		font-size:14px;
+	}
+	.box p:last-child{margin-bottom:0;}
+	.box .bt{
+		font-weight:700;
+		display:block;
+		margin-bottom:6px;
+	}
+	.warn{background:var(--warn-bg);border-left:5px solid var(--warn);}
+	.warn .bt{color:var(--warn);}
+	.ok{background:var(--ok-bg);border-left:5px solid var(--ok);}
+	.ok .bt{color:var(--ok);}
+	.note{background:var(--accent-soft);border-left:5px solid var(--accent);}
+	.note .bt{color:var(--accent);}
+	ul{margin:0 0 14px;padding-left:22px;}
+	ul li{margin-bottom:6px;}
+	.ex{
+		border:1px solid var(--line);
+		border-radius:4px;
+		padding:16px 20px;
+		background:#fafbfc;
+		font-size:14px;
+		margin:0 0 18px;
+	}
+	.ex .bt{font-weight:700;display:block;margin-bottom:8px;font-size:13px;color:var(--muted);}
+	.del{color:var(--warn);text-decoration:line-through;}
+	.ins{color:var(--ok);font-weight:700;}
+	footer{
+		margin-top:48px;
+		padding-top:18px;
+		border-top:1px solid var(--line);
+		font-size:12px;
+		color:var(--muted);
+		display:flex;
+		justify-content:space-between;
+		flex-wrap:wrap;
+		gap:8px;
+	}
+	@media (max-width:640px){
+		body{padding:16px 10px 48px;}
+		.sheet{padding:28px 20px 36px;}
+		th{width:auto;}
+		ol.steps > li{padding-left:40px;}
+	}
+	@media print{
+		body{background:#fff;padding:0;font-size:12px;}
+		.sheet{border:none;padding:0;max-width:none;}
+		h2{page-break-after:avoid;}
+		ol.steps > li{page-break-inside:avoid;}
+	}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+	<header>
+		<p class="eyebrow">仁淀鉄鋼株式会社</p>
+		<h1>公式サイト 更新手順書<br>― テキスト修正の反映まで ―</h1>
+		<p class="lead">Visual Studio Code を使って公式サイト（niyodo.co.jp）の文章を修正し、GitHub Pages へ公開するまでの標準手順です。誤字の修正、日付や数値の書き換えなど、既存テキストの差し替えを対象としています。</p>
+	</header>
+
+	<h2>1. 前提情報</h2>
+	<table>
+		<tr><th>公開URL</th><td>https://niyodo.co.jp</td></tr>
+		<tr><th>リポジトリ</th><td>https://github.com/niyodo-tekko/niyodo-tekko</td></tr>
+		<tr><th>ブランチ</th><td><code>main</code>（このブランチへ push した内容がそのまま公開されます）</td></tr>
+		<tr><th>ローカルフォルダ</th><td>OneDrive ＞ 共有用フォルダ ＞ 公式サイト_仁淀鉄鋼(Github Pagesで公開) ＞ niyodo-tekko</td></tr>
+		<tr><th>主な編集対象</th><td><code>index.html</code>（ニュース・ごあいさつ・会社概要・沿革など全セクションを収録）<br><code>map.html</code>（アクセスマップ）</td></tr>
+		<tr><th>文字コード</th><td>UTF-8（BOM付き） ※ 保存時の最重要注意点。詳細は「4. 注意事項」参照</td></tr>
+		<tr><th>公開までの時間</th><td>push から概ね 1〜3 分</td></tr>
+		<tr><th>所要時間の目安</th><td>10 分程度</td></tr>
+	</table>
+
+	<h2>2. 準備するもの</h2>
+	<ul>
+		<li>Visual Studio Code（インストール済みであること）</li>
+		<li>GitHub アカウントへのサインイン（VS Code 上で認証済みであること）</li>
+		<li>修正内容が確定していること（誤字の場合は「修正前の文字列」と「修正後の文字列」を明確にしておく）</li>
+	</ul>
+
+	<h2>3. 修正から公開までの手順</h2>
+
+	<ol class="steps">
+
+		<li>
+			<span class="st">VS Code でリポジトリのフォルダを開く</span>
+			<p>VS Code のメニューから <strong>ファイル ＞ フォルダーを開く</strong> を選び、上記「ローカルフォルダ」を指定します。エクスプローラーでフォルダを右クリックし <strong>「Code で開く」</strong> を選んでも構いません。</p>
+			<div class="box warn">
+				<span class="bt">開く前に確認</span>
+				<p>OneDrive の同期が完了していること（フォルダのアイコンが緑のチェックになっていること）。同期中に編集すると、<code>index-PC名.html</code> のような競合ファイルが作られることがあります。</p>
+			</div>
+		</li>
+
+		<li>
+			<span class="st">対象ファイルを開き、該当箇所を検索する</span>
+			<p>左のエクスプローラーから <code>index.html</code> を開き、<kbd>Ctrl</kbd> + <kbd>F</kbd> で検索します。</p>
+			<p>検索語は、<strong>誤字そのものだけでなく前後の文字を含めた 5〜10 文字程度</strong>を指定してください。同じ語が他の箇所にも存在する場合の誤修正を防げます。</p>
+			<div class="ex">
+				<span class="bt">検索語の例（「かって」→「かつて」の修正の場合）</span>
+				<p>× <code>かって</code> … 「向かって」「分かって」など無関係な箇所にもヒットする<br>
+				○ <code>企業自身もかってない</code> … 目的の 1 箇所だけに絞り込める</p>
+			</div>
+		</li>
+
+		<li>
+			<span class="st">文字を修正する</span>
+			<p>該当箇所を直接書き換えます。HTML タグ（<code>&lt;br&gt;</code> や <code>&lt;a href="..."&gt;</code> など）は消さないよう注意してください。</p>
+			<div class="ex">
+				<span class="bt">修正例</span>
+				<p>修正前： 企業自身も<span class="del">かって</span>ない変革を迫られています。<br>
+				修正後： 企業自身も<span class="ins">かつて</span>ない変革を迫られています。</p>
+			</div>
+		</li>
+
+		<li>
+			<span class="st">保存前に文字コードを確認する</span>
+			<p>VS Code 画面<strong>右下のステータスバー</strong>を見て、<code>UTF-8 with BOM</code> と表示されていることを確認します。</p>
+			<p>もし <code>UTF-8</code>（BOM の表示なし）になっている場合は、そのまま保存するとサイト全体が文字化けする恐れがあります。ステータスバーのエンコーディング表示をクリックし、<strong>「エンコード付きで保存」→「UTF-8 with BOM」</strong> を選択してください。</p>
+		</li>
+
+		<li>
+			<span class="st">保存する</span>
+			<p><kbd>Ctrl</kbd> + <kbd>S</kbd> で保存します。</p>
+		</li>
+
+		<li>
+			<span class="st">差分を確認する ― 最も重要な工程</span>
+			<p><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd> でソース管理ビューを開き、変更されたファイル名をクリックすると、変更前後が左右に並んで表示されます。</p>
+			<p><strong>変更行が、自分が直した行だけになっているか</strong>を必ず確認してください。</p>
+			<div class="box warn">
+				<span class="bt">大量の行が変更扱いになっていたら中止</span>
+				<p>1 文字しか直していないのに何十行も変更されている場合、文字コードまたは改行コードが変わってしまっています。<strong>コミットせず</strong>、ソース管理ビューでファイル名の横の <strong>「変更を破棄」</strong> をクリックして元に戻し、手順 4 からやり直してください。</p>
+			</div>
+		</li>
+
+		<li>
+			<span class="st">コミットする</span>
+			<p>ソース管理ビュー上部のメッセージ欄に、<strong>何をどう直したかが分かる一文</strong>を入力し、<strong>「コミット」</strong>ボタンを押します。</p>
+			<div class="ex">
+				<span class="bt">コミットメッセージの例</span>
+				<p><code>ごあいさつの誤字修正（かって→かつて）</code><br>
+				<code>会社概要の社員数・売上高を令和8年3月期に更新</code><br>
+				<code>ニュースリリースに2026年4月分を追加</code></p>
+			</div>
+		</li>
+
+		<li>
+			<span class="st">GitHub へ push する</span>
+			<p><strong>「変更の同期」</strong>（または「Push」）ボタンを押します。これで GitHub 上のリポジトリに反映され、GitHub Pages のビルドが自動的に始まります。</p>
+		</li>
+
+		<li>
+			<span class="st">公開サイトで確認する</span>
+			<p>1〜3 分待ってから <strong>https://niyodo.co.jp</strong> を開き、<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>（キャッシュを無視した再読み込み）を押して、修正が反映されていることを目視で確認します。</p>
+			<p>反映されない場合は、GitHub リポジトリの <strong>Actions</strong> タブで <code>pages build and deployment</code> が緑のチェックになっているかを確認し、さらに数分待って再確認してください。</p>
+			<div class="box ok">
+				<span class="bt">ここまで確認できたら完了です</span>
+				<p>修正箇所が正しく表示され、ページの他の部分（レイアウト・画像・リンク）に崩れがないこともあわせて確認しておくと安心です。</p>
+			</div>
+		</li>
+
+	</ol>
+
+	<h2>4. 注意事項</h2>
+
+	<h3>メモ帳（notepad.exe）では編集しない</h3>
+	<p>改行コードや文字コードが書き換えられ、ファイル全体が変更扱いになります。差分が追えなくなるため、必ず VS Code を使用してください。</p>
+
+	<h3>文字コードは UTF-8（BOM付き）を維持する</h3>
+	<p>このサイトの HTML ファイルは BOM 付きで保存されています。BOM を落として保存すると、環境によっては日本語が文字化けします。保存のたびにステータスバーを確認する習慣をつけてください。</p>
+
+	<h3>main ブランチへの push は即公開を意味する</h3>
+	<p>確認用の環境はありません。push した内容がそのまま公開サイトに反映されます。差分確認（手順 6）を省略しないでください。</p>
+
+	<h3>GitHub の Web 画面から直接編集した場合</h3>
+	<p>ブラウザ上で編集・コミットした場合、ローカルのフォルダは古いままです。次回の編集前に、VS Code のソース管理ビューから <strong>「プル」</strong> を実行して最新化してください。忘れると次回コミット時に競合が発生します。</p>
+
+	<h3>公開したくないファイルを追加する場合</h3>
+	<p>リポジトリ直下に置いたファイルは、原則としてそのまま一般公開されます。社内向け資料などを置く場合は、<code>_config.yml</code> の <code>exclude:</code> にファイル名を追記して公開対象から除外してください（本手順書も除外しています）。</p>
+	<pre><code>exclude:
+  - README.md
+  - 手順書.html</code></pre>
+
+	<h2>5. 取り消し方法</h2>
+	<table class="cols">
+		<tr><th style="width:220px;">状況</th><th>対応</th></tr>
+		<tr>
+			<td>保存したが、まだコミットしていない</td>
+			<td>ソース管理ビューでファイル名横の <strong>「変更を破棄」</strong> をクリックする</td>
+		</tr>
+		<tr>
+			<td>コミットしたが、まだ push していない</td>
+			<td>正しい内容に修正し、あらためてコミットしてから push する</td>
+		</tr>
+		<tr>
+			<td>push して公開されてしまった</td>
+			<td>あらためて正しい内容に修正し、コミット＆push して上書きする（履歴を消す操作は行わない）</td>
+		</tr>
+	</table>
+
+	<div class="box note">
+		<span class="bt">判断に迷ったら</span>
+		<p>差分の内容に不安がある、大量の行が変更されている、競合が発生した ― こうした場合は無理に push せず、その状態のまま担当者に確認してください。push しない限り公開サイトには影響しません。</p>
+	</div>
+
+	<footer>
+		<span>仁淀鉄鋼株式会社　公式サイト 更新手順書</span>
+		<span>2026年9月1日 作成</span>
+	</footer>
+
+</div>
+</body>
+</html>
